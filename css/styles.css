@@ -1,0 +1,28 @@
+html, body {
+    font-size: 1em;
+}
+
+label {
+    color: #ffffff;
+}
+
+span.position-absolute {
+    bottom: 15px;
+    right: 15px;
+}
+
+.card-group .col-md-4 {
+    margin-bottom: 15px !important;
+}
+
+.card .card-text {
+    font-size: 1em;
+}
+
+#row-pagination {
+    position: absolute;
+    bottom: 25px;
+    text-align: center;
+    width: 100%;
+}
+

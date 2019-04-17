@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Concursos de Escritura</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container-fluid">
+
+        <!-- SEARCH NAVBAR -->
+        <nav class="navbar navbar-light bg-primary mb-2">
+
+            <div class="form-group col-md-3 text-center">
+                <label for="ddlMonth">Convocatory: </label>
+                <select class="form-control ml-2" id="ddlMonth"></select>
+            </div>
+            
+            <div class="form-group col-md-2 text-center">
+                <label for="ddlCategory">Category: </label>
+                <select class="form-control ml-2" id="ddlCategory"></select>
+            </div>
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="form-group col-md-6 text-center">
+                        <label for="ddlFromDay">From: </label>
+                        <select class="form-control" id="ddlFromDay"></select>
+                    </div>
+                    <div class="form-group col-md-6 text-center">
+                        <label for="ddlToDay">To: </label>
+                        <select class="form-control" id="ddlToDay"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-md-4 text-center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="txtKeyword">Keyword: </label>
+                        <input type="text" class="form-control ml-2" id="txtKeyword">
+                    </div>
+                    <div class="col-md-3">
+                        <label></label>
+                        <button type="button" class="btn btn-block btn-info mt-2" id="btnSearch"  title="Search Keyword">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-3">
+                        <label></label>
+                        <button type="button" class="btn btn-block btn-danger mt-2" id="btnClear" title="Clear Filters">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+
+        <!--COMPETITIONS-->      
+        <div class="row card-group mt-auto" id="competitions-deck"></div>
+
+        <!--PAGINATION BUTTONS-->
+        <div class="row" id="row-pagination">
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-block btn-first" title="First Page"><i class="fas fa-chevron-left"></i></button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-block btn-prev" title="Previous Page"><i class="fas fa-arrow-left"></i></button>
+            </div>
+            <div class="col text-center">
+                <span class="label label-default align-middle lbl-pagination"></span>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-block btn-next" title="Next Page"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-block btn-last" title="Last Page"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <footer class="fixed-bottom bg-dark justify-content-center">
+            <p class="text-white text-center p-0 m-0" id="lblNumCompetitions">0 competitions.</p>
+        </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/init.js"></script>
+</body>
+</html>
