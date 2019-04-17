@@ -1,3 +1,8 @@
+$(function() 
+{
+    $('#toggle-email').bootstrapToggle();
+})
+
 $('#ddlMonth').change( function() 
 {
     GETCompetitions( this.value );
@@ -59,28 +64,27 @@ function LOADConvocatories(DOM)
         }
     });
 
-    GETCompetitions($('#ddlMonth').val());
+    GETCompetitions( $('#ddlMonth').val() );
 }
 
 function GETCompetitions(MONTH) 
 {
-    let ul = $(div).find('p:contains(' + MONTH + ') + ul');
-    let childs = Array.from(ul[0].children);
+    let ul = $( div ).find( 'p:contains(' + MONTH + ') + ul' );
+    let childs = Array.from( ul[0].children );
 
-        $('#competitions-deck').html("");
+        $( '#competitions-deck' ).html("");
         mapCategories = new Map();
         listCompetitions = [];
 
-        $(childs).each(function () {
+        $( childs ).each(function () {
             if (IsMonetaryPrize( this )) 
-            {
                 CREATECompetition( this );
-            }
         });
 
         LOADCategories();
         searchResults = listCompetitions;
 
+        currentPage = 1;
         pagination( null );
 }
 
@@ -232,10 +236,11 @@ function getKey(map, value) {
 function search() 
 {
     searchResults = listCompetitions;
+    currentPage = 1;
     if ($('#ddlCategory').val() != 'All' ) searchByCategory($('#ddlCategory').val());
     searchByDay();
     if ($('#txtKeyword').val()) searchByKeyword($('#txtKeyword').val());
-    //    refreshScreen( searchResults );
+    if ($('#toggle-email').is(':checked')) searchByEmail( $('#toggle-email').is(':checked') );
 }
 
 function searchByCategory(categoryKey) 
@@ -286,7 +291,14 @@ function searchByKeyword(keyword)
     
         return containsKeyword;
     });
+}
 
+function searchByEmail( acceptsEmail ) 
+{
+    let arrayToFilter = searchResults.length > 0 ? searchResults : listCompetitions;
+    searchResults = arrayToFilter.filter(function( comp ) {
+        return comp.acceptsEmail
+    });
 }
 
 function refreshScreen( competitions ) 
@@ -319,12 +331,14 @@ function clearFilters()
     $('#ddlFromDay').val(new Date().getDate());
     $('#ddlToDay').val('31');
     $('#txtKeyword').val('');
+    $('#toggle-email').attr('checked', false);
     searchResults = listCompetitions;
     pagination( null );
 }
 
 function pagination( order )
 {
+    console.log( "Pagination()" );
     let numPages = Math.ceil( searchResults.length / NUM_CARDS_PER_PAGE) ;
 
     switch ( order ) 

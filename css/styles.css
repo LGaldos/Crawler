@@ -19,9 +19,13 @@ span.position-absolute {
     font-size: 1em;
 }
 
+.toggle input[type=checkbox] {
+    cursor: pointer;
+}
+
 #row-pagination {
     position: absolute;
-    bottom: 25px;
+    bottom: 30px;
     text-align: center;
     width: 100%;
 }
