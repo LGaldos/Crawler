@@ -14,6 +14,6 @@ var listCompetitions = [];
 
 var searchResults = [];
 
-var NUM_CARDS_PER_PAGE = 12;
+var NUM_CARDS_PER_PAGE = 16;
 
 var currentPage = 1;

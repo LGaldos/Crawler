@@ -129,8 +129,8 @@ function CREATECompetition( li ) {
 
 function CREATECard( competition ) 
 {
-    let cardHTML = '<div class="col-md-4">';
-    cardHTML += '<div class="card h-100 mb-2">';
+    let cardHTML = '<div class="col-md-3">';
+    cardHTML += '<div class="card border-primary h-100 mb-2">';
     cardHTML += '   <div class="card-body position-relative">';
     cardHTML += '       <h6 class="card-title text-truncate" title="' + competition.title.escape() +'">';
     cardHTML += '           <a href="' + competition.url + '" target="_blank">' + competition.title + '</a>'

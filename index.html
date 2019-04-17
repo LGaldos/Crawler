@@ -17,7 +17,7 @@
     <div class="container-fluid">
 
         <!-- SEARCH NAVBAR -->
-        <nav class="navbar navbar-light bg-primary mb-2 p-0">
+        <nav class="navbar navbar-light bg-info mb-2 p-0">
 
             <div class="form-group col-md-2 text-center">
                 <label for="ddlMonth">Convocatory: </label>
@@ -42,21 +42,21 @@
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-2 text-center">
                 <label class="checkbox-inline mt-4 mx-auto">
-                    <input type="checkbox" data-toggle="toggle" data-onstyle="info" id="toggle-email" data-off="Both" data-on="Yes" data-onstyle="success" data-offstyle="danger">
+                    <input type="checkbox" data-toggle="toggle" data-onstyle="primary" id="toggle-email" data-off="Both" data-on="Yes" data-onstyle="success" data-offstyle="danger">
                     Accepts email participation
                 </label>
             </div>
 
             <div class="form-group col-md-4 text-center">
                 <div class="row">
-                    <div class="col-md-8 mr-0">
+                    <div class="col-md-6 mr-0">
                         <label for="txtKeyword">Keyword: </label>
                         <input type="text" class="form-control" id="txtKeyword">
                     </div>
-                    <div class="col-md-2 d-flex align-items-end">
-                        <button type="button" class="btn btn-block btn-info" id="btnSearch"  title="Search Keyword">
+                    <div class="col-md-2 d-flex align-items-end p-0">
+                        <button type="button" class="btn btn-block btn-primary" id="btnSearch"  title="Search Keyword">
                             <i class="fas fa-search"></i>
                         </button>
                     </div>
@@ -72,24 +72,24 @@
 
 
         <!--COMPETITIONS-->      
-        <div class="row card-group mt-2" id="competitions-deck"></div>
+        <div class="row card-group jumbotron" id="competitions-deck"></div>
 
         <!--PAGINATION BUTTONS-->
         <div class="row" id="row-pagination">
             <div class="col">
-                <button type="button" class="btn btn-primary btn-block btn-first" title="First Page"><i class="fas fa-chevron-left"></i></button>
+                <button type="button" class="btn btn-info btn-block btn-first" title="First Page"><i class="fas fa-chevron-left"></i></button>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary btn-block btn-prev" title="Previous Page"><i class="fas fa-arrow-left"></i></button>
+                <button type="button" class="btn btn-info btn-block btn-prev" title="Previous Page"><i class="fas fa-arrow-left"></i></button>
             </div>
-            <div class="col text-center">
-                <span class="label-default font-weight-bold align-middle lbl-pagination"></span>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-primary btn-block btn-next" title="Next Page"><i class="fas fa-arrow-right"></i></button>
+            <div class="col d-flex bg-info align-items-center justify-content-center text-white">
+                <span class="label-default text-center font-weight-bold lbl-pagination"></span>
             </div>
             <div class="col">
-                <button type="button" class="btn btn-primary btn-block btn-last" title="Last Page"><i class="fas fa-chevron-right"></i></button>
+                <button type="button" class="btn btn-info btn-block btn-next" title="Next Page"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-info btn-block btn-last" title="Last Page"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
 
